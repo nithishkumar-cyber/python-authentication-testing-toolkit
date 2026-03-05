@@ -1,77 +1,108 @@
-# 🛠️ Red Team CLI Toolkit – Python Automation for Brute-Force, Lockout & Wordlist Gen
+# 🔐 Python CLI Authentication Testing Toolkit (Educational Lab)
 
-🗓️ **Date:** May 2025  
-🧪 **Type:** Offensive Security Mini Project  
-💻 **Language:** Python  
-🎯 **Focus:** CLI-based Red Team scripts for automation, evasion, and brute-force simulation
-
----
-
-## 📦 Toolkit Summary
-
-This Python toolkit simulates attacker logic from the command line, bundling 3 modules in a single flag-controlled script:
-
-| Mode (`--tool`)  | Function                         |
-|------------------|----------------------------------|
-| `1`              | Brute-force password guesser     |
-| `2`              | Wordlist generator               |
-| `3`              | Login lockout simulator          |
+🗓️ Date: May 2025  
+🐍 Language: Python  
+🎯 Focus: Controlled authentication attempt simulation to study lockout behavior and authentication logging visibility.
 
 ---
 
-## 🚀 How to Run
+## 🧠 Project Overview
 
-> Requires: Python 3.x  
-> Run using terminal + flags:
+This project is a CLI-based Python tool created to simulate repeated authentication attempts in a controlled lab environment.
 
-python redteam_tool.py --tool 1 --username admin --wordlist pass.txt --silent  
-python redteam_tool.py --tool 2 --output list.txt pass123 admin123 welcome1  
-python redteam_tool.py --tool 3 --attempts 1234 hunter2 qwerty
+The objective was to understand how authentication systems handle repeated login failures and how these events appear in system logs.
 
+The script allows testing of authentication workflows using custom wordlists while controlling timing between attempts to observe lockout behavior.
 
----
-
-## 🧪 Sample Output
-
-🔹 **Brute-force (Tool 1):**  
-Trying admin:pass123 ✅ Success  
-Trying admin:admin123 ❌ Failed  
-
-🔹 **Wordlist Gen (Tool 2):**  
-Generated wordlist:  
-pass123  
-admin123  
-welcome1  
-
-🔹 **Lockout Sim (Tool 3):**  
-Simulating 3 failed attempts...  
-Result: Account locked  
+This project was developed strictly as an educational exercise to study authentication mechanisms and detection patterns.
 
 ---
 
-## 🧰 Features  
-- CLI argument handling via `sys.argv`  
-- Simulated brute-force with randomized delays  
-- Lockout logic after failed login attempts  
-- Wordlist creation from terminal input  
-- Optional `--silent` flag for quiet mode  
+## ⚙️ Core Functionality
+
+The toolkit performs the following actions:
+
+• Accepts command-line arguments using `sys.argv`  
+• Reads credential attempts from a custom wordlist  
+• Iterates login attempts in a controlled sequence  
+• Implements timing delays between attempts  
+• Logs authentication attempt results for analysis
 
 ---
 
-## 📁 Files Included
-- `redteam_tool` — Main CLI script  
-- `sample_wordlist.txt` — Wordlist input
+## 🔧 Technical Components
+
+### CLI Argument Handling
+
+The tool accepts input parameters from the command line using:
+
+
+sys.argv
+
+
+This enables flexible configuration of:
+
+• target username  
+• wordlist file  
+• delay between authentication attempts
 
 ---
 
-## 🧠 Skills Demonstrated  
-- Command-line interface scripting using `sys.argv`  
-- Automation of brute-force and lockout simulations  
-- Wordlist logic and I/O file handling  
-- Flag-based terminal UX like Red Team tools    
+### Wordlist Processing
+
+The script reads credential entries from a wordlist file and iterates through them sequentially.
+
+Key concepts demonstrated:
+
+• File input/output handling  
+• Iteration through credential datasets  
+• Controlled execution flow
 
 ---
 
-## ⚠️ Disclaimer  
-This project is for educational and ethical testing only.  
-Do not use these scripts against any system without proper authorization.
+### Authentication Attempt Simulation
+
+The script performs repeated login attempts using credentials from the wordlist.
+
+Each attempt includes a configurable delay to simulate rate-limited behavior.
+
+This helps demonstrate how authentication systems respond to repeated failures and how lockout policies may be triggered.
+
+---
+
+### Logging & Observation
+
+Authentication attempts and results are recorded to allow observation of patterns that would typically appear in system logs.
+
+This helps demonstrate how security monitoring systems detect repeated authentication failures.
+
+---
+
+## 📁 Repository Contents
+
+`auth_test.py` — CLI authentication testing script  
+`wordlist.txt` — Sample credential dataset for testing  
+`README.md` — Project documentation
+
+---
+
+## 🧰 Skills Demonstrated
+
+• Python CLI tool development  
+• Command-line argument parsing (`sys.argv`)  
+• File handling and wordlist processing  
+• Structured looping and control flow  
+• Authentication workflow simulation  
+• Security logging awareness
+
+---
+
+## 🎯 Learning Outcome
+
+This project demonstrates how repeated authentication attempts can be simulated in a controlled environment to study lockout behavior and authentication failure patterns that security monitoring systems would detect.
+
+---
+
+## ⚠️ Disclaimer
+
+This project was created for educational purposes in a controlled lab environment to study authentication behavior and security monitoring concepts. It is not intended for use against real systems.
