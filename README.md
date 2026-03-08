@@ -103,6 +103,22 @@ This project demonstrates how repeated authentication attempts can be simulated 
 
 ---
 
+## 📘 What I Learned
+
+• How repeated authentication attempts appear in system logging and monitoring systems.
+
+• How login failure patterns can trigger security alerts or account lockout policies.
+
+• How to build a Python CLI tool using command-line arguments (`sys.argv`).
+
+• How to process credential wordlists using Python file handling and iteration.
+
+• How rate limiting and timing delays influence authentication system behavior.
+
+• How controlled simulations can help security analysts understand brute-force detection patterns.
+
+---
+
 ## ⚠️ Disclaimer
 
 This project was created for educational purposes in a controlled lab environment to study authentication behavior and security monitoring concepts. It is not intended for use against real systems.
