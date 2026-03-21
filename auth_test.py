@@ -1,3 +1,9 @@
+"""
+Educational use only.
+This script is intended for controlled lab environments.
+Do not use on systems without explicit authorization.
+"""
+
 import time
 import sys
 import random

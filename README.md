@@ -2,31 +2,31 @@
 
 🗓️ Date: May 2025  
 🐍 Language: Python  
-🎯 Focus: Controlled authentication attempt simulation to study lockout behavior and authentication logging visibility.
+🎯 Focus: Authentication testing, failure analysis, and security logging observation in controlled environments  
 
 ---
 
 ## 🧠 Project Overview
 
-This project is a CLI-based Python tool created to simulate repeated authentication attempts in a controlled lab environment.
+This project is a CLI-based Python tool designed to simulate repeated authentication attempts within a controlled lab environment.
 
-The objective was to understand how authentication systems handle repeated login failures and how these events appear in system logs.
+The primary goal is to study how authentication systems handle repeated login failures and how these events are reflected in system logs and monitoring tools.
 
-The script allows testing of authentication workflows using custom wordlists while controlling timing between attempts to observe lockout behavior.
+The tool enables testing of authentication workflows using custom credential datasets while controlling timing between attempts. This allows observation of rate-limiting behavior and account lockout mechanisms.
 
-This project was developed strictly as an educational exercise to study authentication mechanisms and detection patterns.
+This project was developed strictly for educational purposes to better understand authentication systems, defensive security mechanisms, and detection patterns.
 
 ---
 
 ## ⚙️ Core Functionality
 
-The toolkit performs the following actions:
+The toolkit provides the following capabilities:
 
-• Accepts command-line arguments using `sys.argv`  
-• Reads credential attempts from a custom wordlist  
-• Iterates login attempts in a controlled sequence  
-• Implements timing delays between attempts  
-• Logs authentication attempt results for analysis
+- Accepts command-line arguments using `sys.argv`  
+- Reads credential inputs from a custom dataset file  
+- Iterates authentication attempts in a controlled sequence  
+- Implements configurable timing delays between attempts  
+- Logs authentication results for analysis and observation  
 
 ---
 
@@ -34,91 +34,93 @@ The toolkit performs the following actions:
 
 ### CLI Argument Handling
 
-The tool accepts input parameters from the command line using:
+The tool uses:
 
 
 sys.argv
 
 
-This enables flexible configuration of:
+to accept runtime parameters, enabling flexible configuration of:
 
-• target username  
-• wordlist file  
-• delay between authentication attempts
+- Target username  
+- Input dataset file  
+- Delay between authentication attempts  
 
 ---
 
-### Wordlist Processing
+### Credential Dataset Processing
 
-The script reads credential entries from a wordlist file and iterates through them sequentially.
+The script reads credential entries from an input file and processes them sequentially.
 
 Key concepts demonstrated:
 
-• File input/output handling  
-• Iteration through credential datasets  
-• Controlled execution flow
+- File input/output handling  
+- Iteration through structured datasets  
+- Controlled execution flow  
 
 ---
 
 ### Authentication Attempt Simulation
 
-The script performs repeated login attempts using credentials from the wordlist.
+The script performs repeated authentication attempts using credentials from the dataset.
 
-Each attempt includes a configurable delay to simulate rate-limited behavior.
-
-This helps demonstrate how authentication systems respond to repeated failures and how lockout policies may be triggered.
+Each attempt includes a configurable delay to simulate rate-limited environments. This helps demonstrate how authentication systems respond to repeated failures and how lockout policies or defensive mechanisms may be triggered.
 
 ---
 
 ### Logging & Observation
 
-Authentication attempts and results are recorded to allow observation of patterns that would typically appear in system logs.
+Authentication attempts and outcomes are recorded to support analysis.
 
-This helps demonstrate how security monitoring systems detect repeated authentication failures.
+This enables observation of patterns commonly used by monitoring systems to detect abnormal authentication behavior, such as repeated failures within a short time frame.
 
 ---
 
 ## 📁 Repository Contents
 
-`auth_test.py` — CLI authentication testing script  
-`wordlist.txt` — Sample credential dataset for testing  
-`README.md` — Project documentation
+- `auth_test.py` — CLI authentication testing script  
+- `wordlist.txt` — Sample credential dataset  
+- `README.md` — Project documentation  
 
 ---
 
 ## 🧰 Skills Demonstrated
 
-• Python CLI tool development  
-• Command-line argument parsing (`sys.argv`)  
-• File handling and wordlist processing  
-• Structured looping and control flow  
-• Authentication workflow simulation  
-• Security logging awareness
+- Python CLI tool development  
+- Command-line argument parsing (`sys.argv`)  
+- File handling and dataset processing  
+- Structured looping and control flow  
+- Authentication workflow simulation  
+- Security logging and monitoring awareness  
 
 ---
 
 ## 🎯 Learning Outcome
 
-This project demonstrates how repeated authentication attempts can be simulated in a controlled environment to study lockout behavior and authentication failure patterns that security monitoring systems would detect.
+This project demonstrates how controlled authentication testing can be used to study system behavior, including failure handling, rate limiting, and logging visibility.
+
+It highlights how security monitoring systems identify patterns associated with repeated authentication failures.
 
 ---
 
 ## 📘 What I Learned
 
-• How repeated authentication attempts appear in system logging and monitoring systems.
+- How repeated authentication failures appear in system logs and monitoring tools  
 
-• How login failure patterns can trigger security alerts or account lockout policies.
+- How failure patterns can trigger security alerts or account lockout policies  
 
-• How to build a Python CLI tool using command-line arguments (`sys.argv`).
+- How to build a Python CLI tool using command-line arguments (`sys.argv`)  
 
-• How to process credential wordlists using Python file handling and iteration.
+- How to process credential datasets using Python file handling and iteration  
 
-• How rate limiting and timing delays influence authentication system behavior.
+- How timing and rate limiting influence authentication system behavior  
 
-• How controlled simulations can help security analysts understand brute-force detection patterns.
+- How controlled simulations help in understanding authentication security and detection mechanisms  
 
 ---
 
 ## ⚠️ Disclaimer
 
-This project was created for educational purposes in a controlled lab environment to study authentication behavior and security monitoring concepts. It is not intended for use against real systems.
+This project is intended for educational use only in controlled lab environments.
+
+It is designed to study authentication behavior, system responses, and security monitoring concepts. It should not be used on systems without explicit authorization.
