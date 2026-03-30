@@ -56,7 +56,7 @@ def show_help():
     print("--tool 3 = lockout (requires --attempts)")
     print("--tool 4 = exit")
     print("\nExample:")
-    print("python redteam_tool.py --tool 1 --username admin --wordlist word.txt --silent")
+    print("python auth_test.py --tool 1 --username admin --wordlist word.txt --silent")
 
 args = sys.argv
 
@@ -128,7 +128,7 @@ elif tool == "lockout":
     lockout(attempts)
 
 elif tool == "exit":
-    print("👋 Exiting Hacker Toolkit...")
+    print("👋 Exiting auth test Toolkit...")
     sys.exit()
 
 print("\n🔄 Re-run the program with a new --tool argument to continue.\n")
