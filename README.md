@@ -44,6 +44,47 @@ The tool uses command-line arguments (`sys.argv`) to allow flexible configuratio
 - 👀 Helps understand how repeated failures appear in logs and monitoring systems  
 
 ---
+# 📸 Tool Demonstration
+
+### 🖥️ CLI Menu
+![CLI Menu](./screenshots/cli-menu.png)
+
+### 🔐 Brute Force Simulation (Success Case)
+![Brute Success](./screenshots/brute-success.png)
+
+### 🔒 Account Lockout Simulation
+![Lockout](./screenshots/lockout.png)
+
+### 📁 Wordlist Generation
+![Wordlist](./screenshots/wordlist-gen.png)
+
+---
+
+# 🧠 Security Insight
+
+This tool demonstrates how repeated authentication attempts create detectable patterns in logs.
+
+It highlights:
+- How brute-force behavior appears in monitoring systems  
+- How rate-limiting and lockout mechanisms respond to abuse  
+- How attackers may attempt to evade detection using delays  
+
+This bridges offensive simulation with defensive detection thinking.
+
+---
+
+# 🚀 Quick Run
+
+### Brute Force Simulation
+python auth_test.py --tool 1 --username admin --wordlist sample_wordlist.txt --silent
+
+### Generate Wordlist
+python auth_test.py --tool 2 --output list.txt pass123 admin123
+
+### Simulate Lockout
+python auth_test.py --tool 3 --attempts 1234 1111 2222
+
+---
 
 ## 📦 Repository Contents
 - `auth_test.py` — CLI-based authentication simulation tool  
