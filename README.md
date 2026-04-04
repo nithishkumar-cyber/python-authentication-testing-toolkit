@@ -82,9 +82,10 @@ python auth_test.py --tool 3 --attempts 1234 1111 2222
 ---
 
 ## 📦 Repository Contents
-- `auth_test.py` — CLI-based authentication simulation tool  
-- `wordlist.txt` — Sample input dataset for testing  
-- `README.md` — Project documentation  
+- `auth_test.py` — CLI-based authentication simulation tool
+- `sample_wordlist.txt` — Sample input dataset for testing
+- `sample_output.txt` — Sample output based on CLI usage
+- `README.md` — Project documentation
 
 ---
 
